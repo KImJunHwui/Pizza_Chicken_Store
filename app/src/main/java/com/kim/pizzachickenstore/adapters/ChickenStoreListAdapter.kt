@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.kim.pizzachickenstore.Datas.Store
 import com.kim.pizzachickenstore.R
@@ -28,6 +29,11 @@ class ChickenStoreListAdapter(
         val row2 = tempRow2!!
 
         val chickenData = mList[position]
+
+        val chickenTxt = row2.findViewById<TextView>(R.id.chickenTxt)
+        val chickenImg = row2.findViewById<ImageView>(R.id.chickenImg)
+
+
 
 
         return row2
