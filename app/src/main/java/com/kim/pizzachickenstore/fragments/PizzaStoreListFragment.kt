@@ -1,12 +1,13 @@
 package com.kim.pizzachickenstore.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import com.kim.pizzachickenstore.Datas.Store
+import com.kim.pizzachickenstore.DetailPizzaStoreListActivity
+import com.kim.pizzachickenstore.datas.Store
 import com.kim.pizzachickenstore.R
 import com.kim.pizzachickenstore.adapters.PizzaStoreListAdapter
 import kotlinx.android.synthetic.main.fragment_pizza_store_list.*
@@ -35,6 +36,15 @@ class PizzaStoreListFragment : Fragment() {
 
         mAdapter = PizzaStoreListAdapter(requireContext(), R.layout.pizza_store_list_item, mPizzaStoreList)
         pizzaListView.adapter = mAdapter
+
+        pizzaListView.setOnItemClickListener { parent, view, position, id ->
+
+            val pizzaStoreList = mPizzaStoreList[position]
+            val myIntent = Intent(requireContext(), DetailPizzaStoreListActivity::class.java)
+            myIntent.putExtra("pizza",pizzaStoreList)
+            startActivity(myIntent)
+
+        }
 
     }
 

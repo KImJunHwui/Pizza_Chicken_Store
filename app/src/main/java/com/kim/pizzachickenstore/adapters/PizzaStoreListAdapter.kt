@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.kim.pizzachickenstore.Datas.Store
+import com.kim.pizzachickenstore.datas.Store
 import com.kim.pizzachickenstore.R
 
 class PizzaStoreListAdapter(

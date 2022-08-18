@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import com.kim.pizzachickenstore.Datas.Store
+import com.bumptech.glide.Glide
+import com.kim.pizzachickenstore.datas.Store
 import com.kim.pizzachickenstore.R
 
 class ChickenStoreListAdapter(
@@ -33,7 +34,9 @@ class ChickenStoreListAdapter(
         val chickenTxt = row2.findViewById<TextView>(R.id.chickenTxt)
         val chickenImg = row2.findViewById<ImageView>(R.id.chickenImg)
 
+        chickenTxt.text = chickenData.name
 
+        Glide.with(mContext).load(chickenData.logoUrl).into(chickenImg)
 
 
         return row2
