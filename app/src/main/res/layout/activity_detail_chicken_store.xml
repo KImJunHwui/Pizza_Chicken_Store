@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".DetailPizzaStoreListActivity">
+    tools:context=".DetailChickenStoreActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/pizzaDetailImg"
+        android:id="@+id/chickenDetailImg"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_gravity="center"
@@ -22,7 +22,7 @@
         android:text="가게 이름"/>
 
     <TextView
-        android:id="@+id/pizzaDetailNameTxt"
+        android:id="@+id/chickenDetailNameTxt"
         android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
 
 
         <TextView
-            android:id="@+id/pizzaDetailCallTxt"
+            android:id="@+id/chickenDetailCallTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="실제 전화 번호"/>
@@ -52,14 +52,12 @@
             android:layout_weight="1"/>
 
         <Button
-            android:id="@+id/pizzaCallBtn"
+            android:id="@+id/chickenCallBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="전화 걸기"/>
 
     </LinearLayout>
-
-
 
 
 
