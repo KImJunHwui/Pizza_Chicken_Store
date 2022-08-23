@@ -1,10 +1,15 @@
 package com.kim.pizzachickenstore
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.gun0912.tedpermission.PermissionListener
 import com.kim.pizzachickenstore.datas.Store
 import kotlinx.android.synthetic.main.activity_detail_pizza_store_list.*
+import java.security.Permission
 
 class DetailPizzaStoreListActivity : BaseActivity() {
 
@@ -18,6 +23,33 @@ class DetailPizzaStoreListActivity : BaseActivity() {
 
     }
     override fun setupEvent() {
+
+       val permissionListener = object : PermissionListener{
+           override fun onPermissionGranted() {
+
+               pizzaCallBtn.setOnClickListener {
+
+                   val myUri = Uri.parse("tel:${mPizzaStore.phoneNum}")
+                   val myIntent = Intent(Intent.ACTION_CALL,myUri)
+                   startActivity(myIntent)
+
+
+               }
+
+           }
+
+           override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+
+               Toast.makeText(mContext, "확인 후 다시 시도 바랍니다.", Toast.LENGTH_SHORT).show()
+           }
+
+
+       }
+
+
+
+
+
 
     }
 
