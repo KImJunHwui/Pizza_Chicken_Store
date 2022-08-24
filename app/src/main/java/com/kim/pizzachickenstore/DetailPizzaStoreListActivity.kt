@@ -1,5 +1,6 @@
 package com.kim.pizzachickenstore
 
+import android.Manifest
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.normal.TedPermission
 import com.kim.pizzachickenstore.datas.Store
 import kotlinx.android.synthetic.main.activity_detail_pizza_store_list.*
 import java.security.Permission
@@ -45,6 +47,12 @@ class DetailPizzaStoreListActivity : BaseActivity() {
 
 
        }
+
+        TedPermission.create()
+            .setPermissionListener(permissionListener)
+            .setDeniedMessage("[설정] 창을 확인 바랍니다.")
+            .setPermissions(Manifest.permission.CALL_PHONE)
+            .check()
 
 
 
